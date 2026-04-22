@@ -1,12 +1,22 @@
-name: CD
+name: CI - Java
 
 on:
   push:
-    branches: [ "main" ]
+  pull_request:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Deploy realizado com sucesso"
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Rodar testes
+        run: mvn clean test
