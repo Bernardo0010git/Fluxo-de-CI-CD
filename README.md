@@ -50,3 +50,5 @@ Demonstrar na prática:
 Lucas Bernardo Barrios
 
 Projeto acadêmico para prática de DevOps.
+
+atualização para PR
